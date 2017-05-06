@@ -22,8 +22,8 @@ const (
 	//transaction_err        = -14 //事务处理失败
 	Dateformat_err = -15 //日期格式错误
 
-	server_online_1 = "" //上线服务器，db
-	mysql_url       = ""
+	server_online_1 = "120.24.97.1" //上线服务器，db
+	mysql_url       = "wolfgo:mo:1d2-GSI<=n@tcp(" + server_online_1 + ":3306)/wolfgo?charset=utf8"
 )
 
 func init() {
