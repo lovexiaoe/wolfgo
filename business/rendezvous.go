@@ -15,7 +15,6 @@ type Activities struct {
 	Title         string
 	ActUserId     int64
 	ActTime       time.Time
-	ActTimeStr    string
 	ActAddress    string
 	ActUserAcount int64
 	ActStatus     int
@@ -67,8 +66,6 @@ func AddActivity(w http.ResponseWriter, r *http.Request, ctx *macaron.Context) {
 	rendezvous.Created = time.Now()
 	rendezvous.Modified = time.Now()
 	rendezvous.Yn = 1
-
-	base.RightJsonToRsp(w, resultmap)
 
 	affected, err := base.Engine.Insert(rendezvous)
 	if err != nil {
@@ -177,10 +174,11 @@ func GetActivity(w http.ResponseWriter, r *http.Request, ctx *macaron.Context) {
 	}
 	activity := new(Activities)
 
-	has, err := base.Engine.Where("id=?", int64(actId)).Get(activity)
+	has, err := base.Engine.Where("actId=?", int64(actId)).Get(activity)
 
 	if err != nil {
 		base.WrongCodeJsonToRsp(w, "服务器错误", base.Server_run_err)
+		log.Println("服务器错误", err.Error())
 		return
 	}
 	if has == false {
@@ -191,3 +189,54 @@ func GetActivity(w http.ResponseWriter, r *http.Request, ctx *macaron.Context) {
 	resultmap["activity"] = activity
 	base.RightJsonToRsp(w, resultmap)
 }
+
+//参加活动
+//func GetActivity(w http.ResponseWriter, r *http.Request, ctx *macaron.Context) {
+//	if r.Method != "POST" {
+//		base.WrongCodeJsonToRsp(w, "请使用POST请求", base.Not_post_req)
+//		return
+//	}
+//	resultmap := make(map[string]interface{})
+//	r.ParseForm()
+
+//	actIdStr := base.Getformvalue("actId", r)
+//	if actIdStr == "" {
+//		base.WrongCodeJsonToRsp(w, "请求参数为空！", base.Parmeter_isnull)
+//		return
+//	}
+
+//	actId, err := strconv.Atoi(actIdStr)
+//	if err != nil {
+//		base.WrongCodeJsonToRsp(w, "传入参数错误", base.Params_illegal_err)
+//		return
+//	}
+
+//	userIdStr := base.Getformvalue("userId", r)
+//	if userIdStr == "" {
+//		base.WrongCodeJsonToRsp(w, "请求参数为空！", base.Parmeter_isnull)
+//		return
+//	}
+
+//	userId, err := strconv.Atoi(userIdStr)
+//	if err != nil {
+//		base.WrongCodeJsonToRsp(w, "传入参数错误", base.Params_illegal_err)
+//		return
+//	}
+
+//	activity := new(Activities)
+
+//	has, err := base.Engine.Where("actId=?", int64(actId)).Get(activity)
+
+//	if err != nil {
+//		base.WrongCodeJsonToRsp(w, "服务器错误", base.Server_run_err)
+//		log.Println("服务器错误", err.Error())
+//		return
+//	}
+//	if has == false {
+//		base.WrongCodeJsonToRsp(w, "没有记录对象", base.Server_run_err)
+//		return
+//	}
+
+//	resultmap["activity"] = activity
+//	base.RightJsonToRsp(w, resultmap)
+//}
