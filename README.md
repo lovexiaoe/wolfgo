@@ -115,3 +115,105 @@ Content-Type:application/x-www-form-urlencoded
  }
 ```
 
+### 我发起的活动
+
+请求地址：/wolfgo/activity/actUserList
+
+请求方式：Post
+
+Content-Type:application/x-www-form-urlencoded
+
+入参：
+ 
+| 名称             | 表单类型        | 样例               |
+| :--------------- | :--------------| :------------      |
+| actUserId         | text           | 2            |
+
+
+正确返回：
+
+```
+{"activities":
+      [
+            {"ActId":4,
+            "Title":"新建活动1",
+            "ActUserId":2,
+            "ActTime":"2017-05-01T06:40:00+08:00",
+            "ActAddress":"阿斯地方打算速度",
+            "ActUserAcount":0,
+            "ActStatus":0,
+            "ImgUrl":"asdf.img",
+            "ActRemark":"活动描述内容",
+            "Yn":1,
+            "Created":"2017-04-30T23:07:37+08:00",
+            "Modified":"2017-04-30T23:07:37+08:00"
+            },
+            {"ActId":5,
+            "Title":"新建活动1",
+            "ActUserId":2,
+            "ActTime":"2017-05-01T06:40:00+08:00",
+            "ActAddress":"阿斯地方打算速度",
+            "ActUserAcount":0,
+            "ActStatus":0,
+            "ImgUrl":"asdf.img",
+            "ActRemark":"活动描述内容",
+            "Yn":1,
+            "Created":"2017-04-30T23:27:06+08:00",
+            "Modified":"2017-04-30T23:27:06+08:00"
+            }
+     ],
+"result":true
+}
+```
+
+### 我参与的活动
+
+请求地址：/wolfgo/activity/userList
+
+请求方式：Post
+
+Content-Type:application/x-www-form-urlencoded
+
+入参：
+ 
+| 名称             | 表单类型        | 样例               |
+| :--------------- | :--------------| :------------      |
+| userId         | text           | 2            |
+
+
+正确返回：
+
+```
+{"activities":
+       [
+           {"ActId":3,
+           "Title":"新建活动1",
+           "ActUserId":1,
+           "ActTime":"2017-05-01T06:40:00+08:00",
+           "ActAddress":"阿斯地方打算速度",
+           "ActUserAcount":0,
+           "ActStatus":0,
+           "ImgUrl":"asdf.img",
+           "ActRemark":"活动描述内容",
+           "Yn":1,
+           "Created":"2017-04-30T23:01:08+08:00",
+           "Modified":"2017-04-30T23:01:08+08:00"
+           },
+           {"ActId":2,
+           "Title":"新建活动1",
+           "ActUserId":1,
+           "ActTime":"2017-05-01T06:40:00+08:00",
+           "ActAddress":"阿斯地方打算速度",
+           "ActUserAcount":0,
+           "ActStatus":0,
+           "ImgUrl":"asdf.img",
+           "ActRemark":"",
+           "Yn":1,
+           "Created":"2017-04-30T22:59:18+08:00",
+           "Modified":"2017-04-30T22:59:18+08:00"
+           }
+     ],
+"result":true
+}
+```
+
