@@ -9,6 +9,7 @@
 Content-Type:application/x-www-form-urlencoded
 
 入参：
+ 
 | 名称             | 表单类型        | 样例               |
 | :--------------- | :--------------| :------------      |
 | nickName         | text           | 阿里开发            |
