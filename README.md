@@ -19,4 +19,7 @@ Content-Type:application/x-www-form-urlencoded
 | country        | text           | 高新区     |
 | headImg        | text           | http://12323.jpg  |
 
-
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
