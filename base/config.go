@@ -8,7 +8,7 @@ const (
 	//---返回给前端的处理错误code
 	Server_run_err = -1 //服务器程序处理错误
 	//user_or_pass_err       = -2  //账户或者密码错误
-	//params_illegal_err     = -3  //参数非法
+	Params_illegal_err = -3 //参数非法
 	//unknown_err            = -4  //未知错误
 	//start_session_err      = -5  //启动sesseion失败
 	Not_post_req = -6 //非POST请求
@@ -20,10 +20,11 @@ const (
 	Affected_isnull_err = -12 //未有数据更改
 	//already_has_result_err = -13 //已经是最终状态
 	//transaction_err        = -14 //事务处理失败
-	Dateformat_err = -15 //日期格式错误
+	Dateformat_err  = -15 //日期格式错误
+	Parmeter_isnull = -16 //未有数据更改
 
-	server_online_1 = "" //上线服务器，db
-	mysql_url       = ""
+	server_online_1 = "120.24.97.1" //上线服务器，db
+	mysql_url       = "wolfgo:mo:1d2-GSI<=n@tcp(" + server_online_1 + ":3306)/wolfgo?charset=utf8"
 )
 
 func init() {
