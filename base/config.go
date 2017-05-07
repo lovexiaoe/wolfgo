@@ -23,8 +23,8 @@ const (
 	Dateformat_err  = -15 //日期格式错误
 	Parmeter_isnull = -16 //未有数据更改
 
-	server_online_1 = "120.24.97.1" //上线服务器，db
-	mysql_url       = "wolfgo:mo:1d2-GSI<=n@tcp(" + server_online_1 + ":3306)/wolfgo?charset=utf8"
+	server_online_1 = "" //上线服务器，db
+	mysql_url       = ""
 )
 
 func init() {
