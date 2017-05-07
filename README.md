@@ -23,7 +23,19 @@ Content-Type:application/x-www-form-urlencoded
 正确返回：
 
 ```
-{"result":true,"user":{"UserId":0,"NickName":"阿里开发","OpenId":"123123213","Sex":1,"City":" 阿娇等级分","Province":"四川省","Country":"高新区","HeadImg":"http://829384.jpg","Created":"2017-05-07T23:12:21.333156333+08:00"}}
+{ "result":true,
+  "user":{
+        "UserId":0,
+        "NickName":"阿里开发",
+        "OpenId":"123123213",
+        "Sex":1,
+        "City":" 阿娇等级分",
+        "Province":"四川省",
+        "Country":"高新区",
+        "HeadImg":"http://829384.jpg",
+        "Created":"2017-05-07T23:12:21.333156333+08:00"
+   }
+}
 ```
 
 
